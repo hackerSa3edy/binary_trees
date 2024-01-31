@@ -1006,10 +1006,9 @@ Perfect: 0
 alex@/tmp/binary_trees$
 ```
 
-### 
+### 17. Sibling
 
-**file:** 17. Sibling
-
+**file:** 
 [17-binary_tree_sibling.c](./17-binary_tree_sibling.c)
 
 **Description:**
