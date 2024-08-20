@@ -5,15 +5,15 @@
 This project aims to provide a comprehensive understanding of binary trees, including their structure, operations, and various properties. The objectives include:
 
 1. **Understanding Binary Trees**: Clarify the concept of a binary tree and its basic structure.
-   
+
 2. **Difference Between Binary Tree and Binary Search Tree**: Highlight the distinctions between a binary tree and a binary search tree (BST), focusing on their key characteristics and use cases.
-   
+
 3. **Time Complexity Gain Compared to Linked Lists**: Discuss the potential advantages in terms of time complexity that binary trees offer over linked lists for certain operations.
-   
+
 4. **Exploration of Binary Tree Properties**: Introduce essential properties such as depth, height, and size of a binary tree and their significance in analyzing tree structures.
-   
+
 5. **Traversal Methods**: Present various traversal methods used to navigate through binary trees, including pre-order, in-order, and post-order traversals.
-   
+
 6. **Types of Binary Trees**: Define different types of binary trees such as complete, full, perfect, and balanced trees, highlighting their characteristics and applications.
 
 ## Subtasks
@@ -33,7 +33,7 @@ Create a function that creates a binary tree node.
 - Your function must return a pointer to the new node, or NULL on failure
 
 ```c
-alex@/tmp/binary_trees$ cat 0-main.c 
+alex@/tmp/binary_trees$ cat 0-main.c
 #include <stdlib.h>
 #include "binary_trees.h"
 
@@ -67,7 +67,6 @@ alex@/tmp/binary_trees$ ./0-node
 alex@/tmp/binary_trees$
 ```
 
-
 ### 1. Insert left
 
 **file:**
@@ -83,7 +82,7 @@ Implement a function to insert a node as the left-child of another node.
 - If `parent` already has a left-child, the new node must take its place, and the old left-child must be set as the left-child of the new node.
 
 ```c
-alex@/tmp/binary_trees$ cat 1-main.c 
+alex@/tmp/binary_trees$ cat 1-main.c
 #include <stdlib.h>
 #include <stdio.h>
 #include "binary_trees.h"
@@ -114,10 +113,9 @@ alex@/tmp/binary_trees$ ./1-left
 
        .--(098)-------.
   .--(054)       .--(402)
-(012)          (128)                                            
+(012)          (128)
 alex@/tmp/binary_trees$
 ```
-
 
 ### 2. Insert right
 
@@ -134,7 +132,7 @@ Develop a function to insert a node as the right-child of another node.
 - If `parent` already has a right-child, the new node must take its place, and the old right-child must be set as the right-child of the new node.
 
 ```c
-alex@/tmp/binary_trees$ cat 2-main.c 
+alex@/tmp/binary_trees$ cat 2-main.c
 #include <stdlib.h>
 #include <stdio.h>
 #include "binary_trees.h"
@@ -159,7 +157,7 @@ int main(void)
     return (0);
 }
 alex@/tmp/binary_trees$ gcc -Wall -Wextra -Werror -pedantic binary_tree_print.c 2-main.c 2-binary_tree_insert_right.c 0-binary_tree_node.c -o 2-right
-alex@/tmp/binary_trees$ ./2-right 
+alex@/tmp/binary_trees$ ./2-right
   .--(098)--.
 (012)     (402)
 
@@ -168,7 +166,6 @@ alex@/tmp/binary_trees$ ./2-right
      (054)          (402)
 alex@/tmp/binary_trees$
 ```
-
 
 ### 3. Delete
 
@@ -183,7 +180,7 @@ Write a function to delete an entire binary tree.
 - If `tree` is `NULL`, do nothing
 
 ```c
-alex@/tmp/binary_trees$ cat 3-main.c 
+alex@/tmp/binary_trees$ cat 3-main.c
 #include <stdlib.h>
 #include <stdio.h>
 #include "binary_trees.h"
@@ -212,22 +209,21 @@ alex@/tmp/binary_trees$ valgrind ./3-del
 ==13264== Copyright (C) 2002-2013, and GNU GPL'd, by Julian Seward et al.
 ==13264== Using Valgrind-3.10.1 and LibVEX; rerun with -h for copyright info
 ==13264== Command: ./3-del
-==13264== 
+==13264==
   .-------(098)--.
 (012)--.       (128)--.
      (054)          (402)
-==13264== 
+==13264==
 ==13264== HEAP SUMMARY:
 ==13264==     in use at exit: 0 bytes in 0 blocks
 ==13264==   total heap usage: 9 allocs, 9 frees, 949 bytes allocated
-==13264== 
+==13264==
 ==13264== All heap blocks were freed -- no leaks are possible
-==13264== 
+==13264==
 ==13264== For counts of detected and suppressed errors, rerun with: -v
 ==13264== ERROR SUMMARY: 0 errors from 0 contexts (suppressed: 0 from 0)
 alex@/tmp/binary_trees$
 ```
-
 
 ### 4. Is leaf
 
@@ -243,7 +239,7 @@ Create a function to check if a node is a leaf.
 - If `node` is `NULL`, return `0`
 
 ```c
-alex@/tmp/binary_trees$ cat 4-main.c 
+alex@/tmp/binary_trees$ cat 4-main.c
 #include <stdlib.h>
 #include <stdio.h>
 #include "binary_trees.h"
@@ -274,7 +270,7 @@ int main(void)
     return (0);
 }
 alex@/tmp/binary_trees$ gcc -Wall -Wextra -Werror -pedantic binary_tree_print.c 4-binary_tree_is_leaf.c 4-main.c 0-binary_tree_node.c 2-binary_tree_insert_right.c -o 4-leaf
-alex@/tmp/binary_trees$ ./4-leaf 
+alex@/tmp/binary_trees$ ./4-leaf
   .-------(098)--.
 (012)--.       (128)--.
      (054)          (402)
@@ -283,7 +279,6 @@ Is 128 a leaf: 0
 Is 402 a leaf: 1
 alex@/tmp/binary_trees$
 ```
-
 
 ### 5. Is root
 
@@ -299,7 +294,7 @@ Implement a function to check if a given node is a root.
 - If `node` is `NULL`, return `0`
 
 ```c
-alex@/tmp/binary_trees$ cat 5-main.c 
+alex@/tmp/binary_trees$ cat 5-main.c
 #include <stdlib.h>
 #include <stdio.h>
 #include "binary_trees.h"
@@ -330,7 +325,7 @@ int main(void)
     return (0);
 }
 alex@/tmp/binary_trees$ gcc -Wall -Wextra -Werror -pedantic binary_tree_print.c 5-binary_tree_is_root.c 5-main.c 0-binary_tree_node.c 2-binary_tree_insert_right.c -o 5-root
-alex@/tmp/binary_trees$ ./5-root 
+alex@/tmp/binary_trees$ ./5-root
   .-------(098)--.
 (012)--.       (128)--.
      (054)          (402)
@@ -339,7 +334,6 @@ Is 128 a root: 0
 Is 402 a root: 0
 alex@/tmp/binary_trees$
 ```
-
 
 ### 6. Pre-order traversal
 
@@ -406,7 +400,6 @@ alex@/tmp/binary_trees$ ./6-pre
 alex@/tmp/binary_trees$
 ```
 
-
 ### 7. In-order traversal
 
 **file:**
@@ -472,7 +465,6 @@ alex@/tmp/binary_trees$ ./7-in
 alex@/tmp/binary_trees$
 ```
 
-
 ### 8. Post-order traversal
 
 **file:**
@@ -482,6 +474,7 @@ alex@/tmp/binary_trees$
 Create a function to traverse a binary tree using post-order traversal.
 
 Prototype: `void binary_tree_postorder(const binary_tree_t *tree, void (*func)(int));`
+
 - Where `tree` is a pointer to the root node of the tree to traverse
 - And `func` is a pointer to a function to call for each node. The value in the node must be passed as a parameter to this function.
 - If `tree` or `func` is `NULL`, do nothing
@@ -538,7 +531,6 @@ alex@/tmp/binary_trees$ ./8-post
 alex@/tmp/binary_trees$
 ```
 
-
 ### 9. Height
 
 **file:**
@@ -552,7 +544,7 @@ Implement a function to measure the height of a binary tree.
 - If `tree` is `NULL`, your function must return `0`
 
 ```c
-alex@/tmp/binary_trees$ cat 9-main.c 
+alex@/tmp/binary_trees$ cat 9-main.c
 #include <stdlib.h>
 #include <stdio.h>
 #include "binary_trees.h"
@@ -583,7 +575,7 @@ int main(void)
     return (0);
 }
 alex@/tmp/binary_trees$ gcc -Wall -Wextra -Werror -pedantic binary_tree_print.c 9-binary_tree_height.c 9-main.c 0-binary_tree_node.c 2-binary_tree_insert_right.c -o 9-height
-alex@/tmp/binary_trees$ ./9-height 
+alex@/tmp/binary_trees$ ./9-height
   .-------(098)--.
 (012)--.       (128)--.
      (054)          (402)
@@ -592,7 +584,6 @@ Height from 128: 1
 Height from 54: 0
 alex@/tmp/binary_trees$
 ```
-
 
 ### 10. Depth
 
@@ -607,7 +598,7 @@ Develop a function to measure the depth of a given node in a binary tree.
 - If `tree` is `NULL`, your function must return `0`
 
 ```c
-alex@/tmp/binary_trees$ cat 10-main.c 
+alex@/tmp/binary_trees$ cat 10-main.c
 #include <stdlib.h>
 #include <stdio.h>
 #include "binary_trees.h"
@@ -638,7 +629,7 @@ int main(void)
     return (0);
 }
 alex@/tmp/binary_trees$ gcc -Wall -Wextra -Werror -pedantic binary_tree_print.c 10-binary_tree_depth.c 10-main.c 0-binary_tree_node.c 2-binary_tree_insert_right.c -o 10-depth
-alex@/tmp/binary_trees$ ./10-depth 
+alex@/tmp/binary_trees$ ./10-depth
   .-------(098)--.
 (012)--.       (128)--.
      (054)          (402)
@@ -647,7 +638,6 @@ Depth of 128: 1
 Depth of 54: 2
 alex@/tmp/binary_trees$
 ```
-
 
 ### 11. Size
 
@@ -662,7 +652,7 @@ Write a function to measure the size of a binary tree (the number of nodes).
 - If `tree` is `NULL`, the function must return `0`
 
 ```c
-alex@/tmp/binary_trees$ cat 11-main.c 
+alex@/tmp/binary_trees$ cat 11-main.c
 #include <stdlib.h>
 #include <stdio.h>
 #include "binary_trees.h"
@@ -693,7 +683,7 @@ int main(void)
     return (0);
 }
 alex@/tmp/binary_trees$ gcc -Wall -Wextra -Werror -pedantic binary_tree_print.c 11-binary_tree_size.c 11-main.c 0-binary_tree_node.c 2-binary_tree_insert_right.c -o 11-size
-alex@/tmp/binary_trees$ ./11-size 
+alex@/tmp/binary_trees$ ./11-size
   .-------(098)--.
 (012)--.       (128)--.
      (054)          (402)
@@ -702,7 +692,6 @@ Size of 128: 2
 Size of 54: 1
 alex@/tmp/binary_trees$
 ```
-
 
 ### 12. Leaves
 
@@ -714,11 +703,11 @@ Create a function to count the leaves in a binary tree.
 
 - Prototype: `size_t binary_tree_leaves(const binary_tree_t *tree);`
 - Where `tree` is a pointer to the root node of the tree to count the number of leaves
-If `tree` is `NULL`, the function must return 0
+  If `tree` is `NULL`, the function must return 0
 - A `NULL` pointer is not a leaf
 
 ```c
-alex@/tmp/binary_trees$ cat 12-main.c 
+alex@/tmp/binary_trees$ cat 12-main.c
 #include <stdlib.h>
 #include <stdio.h>
 #include "binary_trees.h"
@@ -749,7 +738,7 @@ int main(void)
     return (0);
 }
 alex@/tmp/binary_trees$ gcc -Wall -Wextra -Werror -pedantic binary_tree_print.c 12-binary_tree_leaves.c 12-main.c 0-binary_tree_node.c 2-binary_tree_insert_right.c -o 12-leaves
-alex@/tmp/binary_trees$ ./12-leaves 
+alex@/tmp/binary_trees$ ./12-leaves
   .-------(098)--.
 (012)--.       (128)--.
      (054)          (402)
@@ -758,7 +747,6 @@ Leaves in 128: 1
 Leaves in 54: 1
 alex@/tmp/binary_trees$
 ```
-
 
 ### 13. Nodes
 
@@ -815,7 +803,6 @@ Nodes in 54: 0
 alex@/tmp/binary_trees$
 ```
 
-
 ### 14. Balance factor
 
 **file:**
@@ -829,7 +816,7 @@ Develop a function to measure the balance factor of a binary tree.
 - If `tree` is `NULL`, return `0`
 
 ```c
-alex@/tmp/binary_trees$ cat 14-main.c 
+alex@/tmp/binary_trees$ cat 14-main.c
 #include <stdlib.h>
 #include <stdio.h>
 #include "binary_trees.h"
@@ -875,8 +862,6 @@ Balance of 128: -1
 Balance of 54: +0
 alex@/tmp/binary_trees$
 ```
-
-
 
 ### 15. Is full
 
@@ -933,7 +918,6 @@ Is 128 full: 0
 alex@/tmp/binary_trees$
 ```
 
-
 ### 16. Is perfect
 
 **file:**
@@ -986,7 +970,7 @@ int main(void)
     return (0);
 }
 alex@/tmp/binary_trees$ gcc -Wall -Wextra -Werror -pedantic binary_tree_print.c 16-binary_tree_is_perfect.c 16-main.c 0-binary_tree_node.c 2-binary_tree_insert_right.c -o 16-perfect
-alex@/tmp/binary_trees$ ./16-perfect 
+alex@/tmp/binary_trees$ ./16-perfect
        .-------(098)-------.
   .--(012)--.         .--(128)--.
 (010)     (054)     (010)     (402)
@@ -1008,7 +992,7 @@ alex@/tmp/binary_trees$
 
 ### 17. Sibling
 
-**file:** 
+**file:**
 [17-binary_tree_sibling.c](./17-binary_tree_sibling.c)
 
 **Description:**
@@ -1131,9 +1115,7 @@ Uncle of 12: (nil)
 alex@/tmp/binary_trees$
 ```
 
-
-
-
 ## Authors
+
 - [Abdelrahman Mohamed](https://github.com/hackerSa3edy)
-- [Zakaria Aaichaou](https://github.com/Z-Sitawi) 
+- [Zakaria Aaichaou](https://github.com/Z-Sitawi)
